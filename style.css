@@ -9,7 +9,8 @@ form {position: fixed; bottom: 0; width: 100%; background:#eee; padding:5px;box-
 form input {border: 0; padding: 10px;  display:block; box-sizing:border-box; width:100%; height:40px;}
 form button {width: 100px; background: #c1edba; border: none; padding: 10px; float:right; height:40px; line-height:20px; cursor:pointer;}
 
-#messages {list-style-type: none; margin: 0; padding: 0; }
+#messages {list-style-type: none; margin: 0; padding: 0 0 50px 0; }
 #messages li {padding: 5px 10px; }
 #messages li:nth-child(odd) { background: #eee; }
 #messages li.system{background:darkred !important; color:white !important;}
+#messages li.mytext{font-weight:bold;}
