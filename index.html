@@ -11,7 +11,7 @@
 	//отправка
 
 	$(function(){
-		$('form').submit(function(){
+		$('form.msg').submit(function(){
 			if($('#m').val()){
 				socket.emit('chat message', $('#m').val());
 				$('#messages').append($('<li class="mytext">').text($('#m').val()));
@@ -21,13 +21,23 @@
 			}
 			return false;
 		});
+
+		//зададим имя
+
+		$('form.nm').submit(function(){
+			socket.emit('name user', $('#name').val());
+			$('.entername').fadeOut();
+			return false;
+		});
+
 	});
 
 
 	//прием
 
-	socket.on('chat message', function(msg){
-		$('#messages').append($('<li>').text(msg));
+	socket.on('chat message', function(mess){
+		console.log(mess);
+		$('#messages').append($('<li>').html('<b>'+mess.user+': </b>'+mess.msg));
 	});
 	socket.on('system message', function(msg){
 		$('#messages').append($('<li class="system">').text(msg));
@@ -35,8 +45,18 @@
 	</script>
 </head>
 <body>
+	<div class="entername">
+		<div class="nameform">
+			<div class="title">
+				Как вас зовут?
+			</div>
+			<form class="nm">
+				<input type="text" id="name">
+			</form>
+		</div>
+	</div>
 	<ul id="messages"></ul>
-	<form action="">
+	<form class="msg" action="">
 		<button>Send</button>
 		<div class="formwrap">
 			<input id="m" autocomplete="off" />

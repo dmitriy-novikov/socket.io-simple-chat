@@ -4,13 +4,17 @@ img{border:0;}
 :focus{outline:none;}
 .clear{clear:both;}
 
-form {position: fixed; bottom: 0; width: 100%; background:#eee; padding:5px;box-sizing:border-box;}
+form.msg {position: fixed; bottom: 0; width: 100%; background:#eee; padding:5px;box-sizing:border-box;}
 .formwrap{margin-right: 105px; position:relative;}
-form input {border: 0; padding: 10px;  display:block; box-sizing:border-box; width:100%; height:40px;}
-form button {width: 100px; background: #c1edba; border: none; padding: 10px; float:right; height:40px; line-height:20px; cursor:pointer;}
+form.msg input {border: 0; padding: 10px;  display:block; box-sizing:border-box; width:100%; height:40px;}
+form.msg button {width: 100px; background: #c1edba; border: none; padding: 10px; float:right; height:40px; line-height:20px; cursor:pointer;}
 
 #messages {list-style-type: none; margin: 0; padding: 0 0 50px 0; }
 #messages li {padding: 5px 10px; }
 #messages li:nth-child(odd) { background: #eee; }
 #messages li.system{background:darkred !important; color:white !important;}
-#messages li.mytext{font-weight:bold;}
+#messages li.mytext{font-weight:bold; font-style:italic;} 
+
+.entername{position:fixed; left:0; top:0; background:rgba(255,255,255,0.8); width:100%; height:100%; z-index:100;}
+.entername .nameform{font-size:18px; height:100px; top:50%; margin-top:-50px; position:fixed; text-align:center; width:100%;}
+.entername input{font-size:16px; display:block; width:300px; margin:20px auto;}
